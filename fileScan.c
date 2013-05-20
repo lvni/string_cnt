@@ -1,5 +1,5 @@
 #include <stdio.h>
-int mail(void){
-    printf(">> scaning...");
+int main(void){
+    printf(">> scaning...\n");
     return 0;
 }
