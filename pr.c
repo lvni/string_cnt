@@ -61,7 +61,7 @@ int get(char *key){
 	}
 	return result;
 }
-int main(){
+int main(void){
 	// HN_ptr note_ptr = (HN_ptr)malloc(sizeof(HaseNote));
 	// note_ptr->count = 1;
 	// note_ptr->string = (char*)malloc(sizeof(char) * 25);
