@@ -11,7 +11,7 @@ typedef struct HaseNote {
 /* 定义哈希指针数组*/
 HN_ptr HashList[HASHSIZE] = {0};
 
-int haseKey(char *key){
+int hashKey(char *key){
 	unsigned int cnt = 0;
 	char ch;
 	while((ch=*key++)){
@@ -21,7 +21,7 @@ int haseKey(char *key){
 }
 void set(char *key){
 	/* 获取key的下标索引 */
-	int index  = haseKey(key);
+	int index  = hashKey(key);
 	HN_ptr head = HashList[index];
 	HN_ptr ptr = head;
 	HN_ptr current = NULL ;
@@ -50,7 +50,7 @@ void set(char *key){
 	
 }
 int get(char *key){
-	int index  = haseKey(key);
+	int index  = hashKey(key);
 	HN_ptr head = HashList[index];
 	int result = -1;
 	while(head){
@@ -67,7 +67,7 @@ int main(){
 	// note_ptr->string = (char*)malloc(sizeof(char) * 25);
 	// strcpy(note_ptr->string,"china");
 	// printf("HaseNote info is %d : %s \n",note_ptr->count,note_ptr->string);
-	// printf("hase key is %d",haseKey(note_ptr->string));
+	// printf("hase key is %d",hashKey(note_ptr->string));
 	FILE * fp;
 	fp = fopen("orc.txt","r");
 	assert(fp);
