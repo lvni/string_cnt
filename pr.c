@@ -3,11 +3,11 @@
 #include <string.h>
 #include <assert.h>
 #define  HASHSIZE 67
-typedef struct HaseNote {
+typedef struct HashNote {
 	char * string;
 	int count;
-	struct HaseNote * next;
-}HaseNote,*HN_ptr;
+	struct HashNote * next;
+}HashNote,*HN_ptr;
 /* 定义哈希指针数组*/
 HN_ptr HashList[HASHSIZE] = {0};
 
@@ -36,7 +36,7 @@ void set(char *key){
 	}
 	if( ptr == NULL){
 		// new 
-		HN_ptr note_ptr = (HN_ptr)malloc(sizeof(HaseNote));
+		HN_ptr note_ptr = (HN_ptr)malloc(sizeof(HashNote));
 		note_ptr->count = 1;
 		note_ptr->string = (char*)malloc(sizeof(char) * strlen(key));
 		strcpy(note_ptr->string,key);
@@ -62,11 +62,11 @@ int get(char *key){
 	return result;
 }
 int main(void){
-	// HN_ptr note_ptr = (HN_ptr)malloc(sizeof(HaseNote));
+	// HN_ptr note_ptr = (HN_ptr)malloc(sizeof(HashNote));
 	// note_ptr->count = 1;
 	// note_ptr->string = (char*)malloc(sizeof(char) * 25);
 	// strcpy(note_ptr->string,"china");
-	// printf("HaseNote info is %d : %s \n",note_ptr->count,note_ptr->string);
+	// printf("HashNote info is %d : %s \n",note_ptr->count,note_ptr->string);
 	// printf("hase key is %d",hashKey(note_ptr->string));
 	FILE * fp;
 	fp = fopen("orc.txt","r");
