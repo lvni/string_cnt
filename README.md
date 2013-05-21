@@ -13,6 +13,5 @@ gcc pr.c -o pr
 
 执行
 ----
-chmod +X pr
 ./pr
 
